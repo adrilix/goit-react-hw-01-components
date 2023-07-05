@@ -18,7 +18,7 @@ const Friendlist = props => {
                             src={avatar}
                             alt={name}
                             width="48" />
-                        <p className="name"></p>
+                        <p className="name">{name}</p>
                     </li>
                 )
             }
