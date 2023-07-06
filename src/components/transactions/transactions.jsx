@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const History = props => {
     const history = props.history;
     return (
-        <table>
+        <table className="transaction-history">
                     <thead>
                         <tr>
                             <th>type</th>

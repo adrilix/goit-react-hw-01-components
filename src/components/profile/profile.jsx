@@ -1,36 +1,39 @@
 import PropTypes from 'prop-types';
+import {StyledProfile, StyledDiv, StyledText, StyledImg, StyledUl, StyledSpan} from './ProfileStyled'
+// import css from './Profile.module.css'
+
 
 const Profile = (props) => {
   const  {username ,tag, location, avatar, stats: {followers,views,likes} } = props;
 
   return (
-        <div className="profile">
-            <div className="description">
-                <img
+        <StyledProfile >
+            <StyledDiv >
+                <StyledImg 
                     src={avatar}
-                    alt="User avatar"
-                    className="avatar"
+                    alt={username}
+                
                 />
-                <p className="name">{username}</p>
-                <p className="tag">@{tag}</p>
-                <p className="location">{location}</p>
-            </div>
+                <StyledText >{username}</StyledText>
+                <p >@{tag}</p>
+                <p >{location}</p>
+            </StyledDiv>
 
-            <ul className="stats">
+            <StyledUl>
                 <li>
-                    <span className="label">Followers</span>
-                    <span className="quantity">{followers}</span>
+                    <StyledSpan>Followers</StyledSpan>
+                    <StyledSpan>  {followers}</StyledSpan>
                 </li>
                 <li>
-                    <span className="label">Views</span>
-                    <span className="quantity">{views}</span>
+                    <StyledSpan>Views</StyledSpan>
+                    <StyledSpan>  {views}</StyledSpan>
                 </li>
                 <li>
-                    <span className="label">Likes</span>
-                    <span className="quantity">{likes}</span>
+                    <StyledSpan>Likes</StyledSpan>
+                    <StyledSpan>  {likes}</StyledSpan>
                 </li>
-            </ul>
-        </div>
+            </StyledUl>
+        </StyledProfile>
     );
 }
 
