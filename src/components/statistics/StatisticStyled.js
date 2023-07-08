@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const StyledProfile = styled.div`
+export const StyledSection = styled.section`
 display: flex;
 flex-direction: column;
 align-items: center;
 width: 400px;
 background-color: lightgrey;
-padding: 40px 0px 0px 0px;
+padding: 0px;
 margin: 10px auto;
 border: 2px solid #888585;
 border-radius: 20px;
@@ -17,28 +17,20 @@ box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
         box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
         background-color: #ece2e2;
         cursor: pointer;
-}
+
+        li{
+            background-color: #bebdc1 ; 
+            color: darkblue;
+        }
+    }
 `;
 
-export const StyledDiv = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-color: #37355a;
-font-size: 24px;
-margin: 0px;
-`;
-
-export const StyledImg = styled.img`
-        max-width: 230px; 
-        display : flex 
-`;
-
-export const StyledText = styled.p `
-
-        color: blue;
-        font-size : 38px ;
-        margin: 10px 0px 0px 0px;
+export const StyledTittle = styled.h2`
+    font-size: 24px;
+    margin: 10px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
 `;
 
 export const StyledUl = styled.ul`
@@ -66,8 +58,15 @@ border: 1px solid #888585;
 border-radius: 17px;
 `;
 
+export const StyledSpanTittle = styled.span`
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+        margin: 20px;
+`;
+
 export const StyledSpan = styled.span`
-        font-size: 18px;
-        display: flex;
+        font-size: 16px;      
+        display: block;
         margin: 20px;
 `;

@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
+import {StyledTable,
+     StyledTableHeader
+    } from './TransactionsStyled' 
 
 const History = props => {
     const history = props.history;
     return (
-        <table className="transaction-history">
+        <StyledTable>
                     <thead>
                         <tr>
                             <th>type</th>
@@ -13,19 +16,19 @@ const History = props => {
                     </thead>
                     <tbody>
                     {history.map(item => {
-                const{type,amount,currency}=item;
+                const{id,type,amount,currency,}=item;
                 return (
-                        <tr key={item.id}>
+                        <StyledTableHeader key={id}>
                             <td>{type}</td>
                             <td>{amount}</td>
                             <td>{currency}</td>
-                        </tr>
+                        </StyledTableHeader>
                 )
             })}
         
                     </tbody>
             
-        </table>
+        </StyledTable>
     )
 }
 
@@ -34,10 +37,12 @@ export default History;
 
 
 History.prototype = {
-    history:
-    { id: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      amount: PropTypes.string.isRequired,
-      currency: PropTypes.string.isRequired,
-    }
+    history:PropTypes.arrayOf(
+                PropTypes.shape({
+                        id: PropTypes.string.isRequired,
+                        type: PropTypes.string.isRequired,
+                        amount: PropTypes.string.isRequired,
+                        currency: PropTypes.string.isRequired,
+        })
+    ).isRequired,
 }

@@ -1,10 +1,24 @@
 import PropTypes from 'prop-types';
-import {StyledProfile, StyledDiv, StyledText, StyledImg, StyledUl, StyledSpan} from './ProfileStyled'
+import {
+    StyledProfile, 
+    StyledDiv, 
+    StyledImg, 
+    StyledText, 
+    StyledUl,
+    StyledLi,
+    StyledSpan} from './ProfileStyled'
 // import css from './Profile.module.css'
 
 
 const Profile = (props) => {
-  const  {username ,tag, location, avatar, stats: {followers,views,likes} } = props;
+  const  {
+    username,
+    tag,
+    location,
+    avatar,
+    stats:
+          {followers,views,likes}
+     } = props;
 
   return (
         <StyledProfile >
@@ -12,7 +26,6 @@ const Profile = (props) => {
                 <StyledImg 
                     src={avatar}
                     alt={username}
-                
                 />
                 <StyledText >{username}</StyledText>
                 <p >@{tag}</p>
@@ -20,18 +33,18 @@ const Profile = (props) => {
             </StyledDiv>
 
             <StyledUl>
-                <li>
+                <StyledLi>
                     <StyledSpan>Followers</StyledSpan>
                     <StyledSpan>  {followers}</StyledSpan>
-                </li>
-                <li>
+                </StyledLi>
+                <StyledLi>
                     <StyledSpan>Views</StyledSpan>
                     <StyledSpan>  {views}</StyledSpan>
-                </li>
-                <li>
+                </StyledLi>
+                <StyledLi>
                     <StyledSpan>Likes</StyledSpan>
                     <StyledSpan>  {likes}</StyledSpan>
-                </li>
+                </StyledLi>
             </StyledUl>
         </StyledProfile>
     );
@@ -42,7 +55,11 @@ Profile.propTypes = {
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,
-    stats: PropTypes.object.isRequired}
+    stats: PropTypes.shape({
+        followers: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+        likes: PropTypes.number.isRequired
+    })}
 
 
 export default Profile
