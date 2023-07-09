@@ -9,15 +9,15 @@ text-align: center;
 align-items: center;
 
 thead th:nth-child(1) {
-  width: 176.64px;
+  width: 176.65px;
 }
 
 thead th:nth-child(2) {
-  width: 163.8px;
+  width: 163.69px;
 }
 
 thead th:nth-child(3) {
-  width: 159.92px;
+  width: 159.41px;
 }
 
 thead{

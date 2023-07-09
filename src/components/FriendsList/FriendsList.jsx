@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+// import { FaCcPaypal } from "react-icons/fa";
 import {
     StyledFriendsUl,
     StyledLi,
