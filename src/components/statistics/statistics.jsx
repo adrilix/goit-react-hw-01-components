@@ -9,12 +9,10 @@ import {
 
 } from './StatisticStyled'
 
-const Statistics = props => {
-    const { title, stats } = props;
-
+const Statistics = ({title, stats }) => {
     return (
         <StyledSection>
-            {{title}.title!==undefined && (<StyledTittle>{title}</StyledTittle>)}
+            {title && (<StyledTittle>{title}</StyledTittle>)}
 
             <StyledUl>
                 {stats.map(({ id, label, percentage }) => {

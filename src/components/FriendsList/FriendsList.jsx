@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Fragment } from "react";
 // import { FaCcPaypal } from "react-icons/fa";
 import {
     StyledFriendsUl,
@@ -21,27 +22,24 @@ const FriendsList = props => {
                 return (
                     <StyledLi key={id}>
                         {
-                            isOnline === true
-                                ? (<StyledSpanOnline>✅ online</StyledSpanOnline>)
-                                : (<StyledSpanOffline>❌ offline </StyledSpanOffline>)
-                        }
-                        {
-                            isOnline === true
-                            ? (<StyledImgOnline
-                                className="avatar"
-                                src={avatar}
-                                alt={name}
-                                width="48" />)
-                            :
-                            (<StyledImgOffline
-                                className="avatar"
-                                src={avatar}
-                                alt={name}
-                                width="40" />)
-                        }
-                        {isOnline === true
-                        ? (<StyledNameOnline>{name}</StyledNameOnline>)
-                        : (<StyledNameOffline>{name}</StyledNameOffline>)
+                            isOnline
+                                ?   (<Fragment>
+                                            <StyledSpanOnline>✅ online</StyledSpanOnline>
+                                            <StyledImgOnline                                        
+                                                    src={avatar}
+                                                    alt={name}
+                                                    width="48" />
+                                            <StyledNameOnline>{name}</StyledNameOnline>
+                                    </Fragment>)
+
+                                :   (<Fragment>
+                                            <StyledSpanOffline>❌ offline </StyledSpanOffline>
+                                            <StyledImgOffline                                        
+                                                    src={avatar}
+                                                    alt={name}
+                                                    width="40" />
+                                            <StyledNameOffline>{name}</StyledNameOffline>
+                                    </Fragment>)
                         }
                     </StyledLi>
                 )
@@ -63,7 +61,7 @@ FriendsList.prototype = {
             id: PropTypes.number.isRequired
         })
     ).isRequired,
-    }
+}
 
 export default FriendsList;
 

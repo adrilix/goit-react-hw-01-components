@@ -15,17 +15,17 @@ const History = props => {
                         </tr>
                     </thead>
                     <tbody>
-                    {history.map(item => {
-                const{id,type,amount,currency,}=item;
-                return (
-                        <StyledTableHeader key={id}>
-                            <td>{type}</td>
-                            <td>{amount}</td>
-                            <td>{currency}</td>
-                        </StyledTableHeader>
-                )
-            })}
-        
+                    {history.map(({id,type,amount,currency,}) => {
+                            return (
+                                    <StyledTableHeader key={id}>
+                                        <td>{type}</td>
+                                        <td>{amount}</td>
+                                        <td>{currency}</td>
+                                    </StyledTableHeader>
+                                )
+                            }
+                        )
+                    }       
                     </tbody>
             
         </StyledTable>
