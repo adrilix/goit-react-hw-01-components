@@ -52,7 +52,7 @@ const FriendsList = props => {
 
 };
 
-FriendsList.prototype = {
+FriendsList.propTypes = {
     friends: PropTypes.arrayOf(
         PropTypes.shape({
             avatar: PropTypes.string.isRequired,

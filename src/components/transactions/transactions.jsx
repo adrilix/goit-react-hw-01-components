@@ -36,7 +36,7 @@ export default History;
 
 
 
-History.prototype = {
+History.propTypes = {
     history:PropTypes.arrayOf(
                 PropTypes.shape({
                         id: PropTypes.string.isRequired,
