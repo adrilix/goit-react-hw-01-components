@@ -5,11 +5,15 @@
   "homepage": "https://adrilix.github.io/goit-react-hw-01-components/",
   "dependencies": {
     "date-fns": "^2.30.0",
+    "formik": "^2.4.2",
+    "nanoid": "^4.0.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.10.1",
     "react-scripts": "5.0.1",
-    "styled-components": "^5.3.11"
+    "styled-components": "^5.3.11",
+    "yap": "^0.0.2",
+    "yup": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
